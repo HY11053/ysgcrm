@@ -175,13 +175,18 @@
                         <li @if(Request::getRequestUri()=='/branddatas/ssd') class="active" @endif><a href="/branddatas/ssd"><i class="fa fa-circle-o"></i> 熟食品牌</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="/user/list">
+                <li class="treeview">
+                    <a href="#">
                         <i class="fa fa-th"></i> <span>前台会员中心</span>
                         <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
                     </a>
+                    <ul class="treeview-menu">
+                        <li @if(Request::getRequestUri()=='/user/list') class="active" @endif><a href="/user/list"><i class="fa fa-circle-o"></i>前台会员列表</a></li>
+                        <li @if(Request::getRequestUri()=='/user/group') class="active" @endif><a href="/user/group"><i class="fa fa-circle-o"></i>会员组管理</a></li>
+                        <li @if(Request::getRequestUri()=='/user/groupcreate') class="active" @endif><a href="/user/groupcreate"><i class="fa fa-circle-o"></i>会员组添加</a></li>
+                    </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">

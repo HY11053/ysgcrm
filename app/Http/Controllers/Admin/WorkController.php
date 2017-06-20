@@ -4,21 +4,46 @@ namespace App\Http\Controllers\Admin;
 
 use App\Admin\Work;
 use App\Admin\Worktui;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class WorkController extends Controller
 {
+    //编辑报表查看
     public function Index()
     {
-        $works=Work::where('id','<>',0)->paginate(50);
+        if(Auth::id()==1)
+        {
+            $works=Work::where('id','<>',0)->paginate(50);
+        }else{
+            if(User::where('id',Auth::id())->value('type'))
+            {
+                $works=Work::where('id','<>',0)->whereIn('user_id',User::where('gid',User::where('id',Auth::id())->value('gid'))->pluck('id'))->paginate(50);
+            }else{
+                $works=Work::where('id','<>',0)->where('user_id',Auth::id())->paginate(50);
+            }
+        }
+
+
         return view('admin.works',compact('works'));
     }
 
     public function IndexTui()
     {
-        $works=Worktui::where('id','<>',0)->paginate(50);
+        if(Auth::id()==1)
+        {
+            $works=Worktui::where('id','<>',0)->paginate(50);
+        }else{
+            if(User::where('id',Auth::id())->value('type'))
+            {
+                $works=Worktui::where('id','<>',0)->whereIn('user_id',User::where('gid',User::where('id',Auth::id())->value('gid'))->pluck('id'))->paginate(50);
+            }else{
+                $works=Worktui::where('id','<>',0)->where('user_id',Auth::id())->paginate(50);
+            }
+        }
+
         return view('admin.workstui',compact('works'));
     }
     public function ArticleImport()

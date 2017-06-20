@@ -39,11 +39,21 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin'], function () {
     Route::post('/status/{id}', 'BrandDatasController@Status')->name('status');
     Route::get('/user/list', 'UserController@Index')->name('users');
     Route::get('/user/del/{id}', 'UserController@Delete');
+    Route::get('/user/edit/{id}', 'UserController@UserEdit');
+    Route::get('/adminuser/edit/{id}', 'UserController@AdminUserEdit');
+    Route::post('/user/edit/{id}', 'UserController@PostUserEdit');
+    Route::get('/user/group', 'UserController@UserGroup')->name('usergroup');
+    Route::get('/user/groupcreate', 'UserController@UserGroupCreate');
+    Route::get('/usergroup/edit/{id}', 'UserController@UserGroupEdit');
+    Route::post('/user/groupedit/{id}', 'UserController@PostUserGroupEdit');
+    Route::post('/user/groupcreate', 'UserController@PostUserGroupCreate');
     Route::get('/works/articleimport', 'WorkController@ArticleImport');
     Route::post('/works/articleimport', 'WorkController@PostArticleImport');
     Route::get('/works', 'WorkController@Index')->name('works');
     Route::get('/works/tuimport', 'WorkController@WaituiInport');
     Route::post('/works/tuimport', 'WorkController@PostWaituiInport');
     Route::get('/workstui', 'WorkController@IndexTui')->name('workstui');
+
+
 
 });

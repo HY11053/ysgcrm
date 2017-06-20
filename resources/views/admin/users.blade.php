@@ -20,6 +20,7 @@
                         <th>今日文章</th>
                         <th>外推</th>
                         <th>今日外推</th>
+                        <th>属组</th>
                         <th style="width: 120px; text-align: center;">操作</th>
                     </tr>
                     @foreach($users as $user)
@@ -33,8 +34,9 @@
                         <td>{{\App\Admin\Work::where('created_at','>',\Carbon\Carbon::today())->where('user_id',$user->id)->count()}} </td>
                         <td>{{$user->waitui->count()}} </td>
                         <td>{{\App\Admin\Worktui::where('created_at','>',\Carbon\Carbon::today())->where('user_id',$user->id)->count()}} </td>
+                        <td>{{\App\Admin\Usergroup::where('id',$user->gid)->value('groupname')}} </td>
                          <td style="text-align: center;">
-                             <a href="/user/edit/{{$user->id}}"><span class="label label-success" style="font-weight: normal">编辑</span></a>
+                             <a href="@if(Auth::id()==1)/adminuser/edit/{{$user->id}}@else/user/edit/{{$user->id}}@endif"><span class="label label-success" style="font-weight: normal">编辑</span></a>
                              {{--<a href="/user/del/{{$user->id}}"><span style="font-weight: normal" class="label label-danger">删除</span></a>--}}
                          </td>
                     </tr>

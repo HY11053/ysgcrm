@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','gid','type'
     ];
 
     /**
@@ -27,6 +27,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected function group()
+    {
+        return $this->belongsTo('App\Admin\Usergroup','id');
+    }
     protected function articles()
     {
         return $this->hasMany('App\Admin\Article','user_id');
