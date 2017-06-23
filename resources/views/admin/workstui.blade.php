@@ -30,7 +30,7 @@
                         @foreach($works as $work)
                             <tr>
                                 <td>{{$work->id}}</td>
-                                <td><a href="{{$work->links}}">{{$work->links}}</a></td>
+                                <td><a href="{{$work->links}}" target="_blank">{{$work->links}}</a></td>
                                 <td>{{$work->created_at}}</td>
                                 <td>{{\App\User::where('id',$work->user_id)->value('name')}}</td>
                             </tr>

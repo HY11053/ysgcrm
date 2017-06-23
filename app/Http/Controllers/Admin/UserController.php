@@ -37,7 +37,7 @@ class UserController extends Controller
     }
     public function PostUserEdit(UsersRequest $request,$id)
     {
-        User::where('id',$id)->update(['name'=>$request['name'],'email'=>$request['email'],'password'=>bcrypt($request['password']),'gid'=>$request['gid'],'type'=>$request['type']]);
+        User::where('id',$id)->update(['name'=>$request['name'],'email'=>$request['email'],'password'=>bcrypt($request['password']),'gid'=>$request['gid'],'type'=>$request['type'],'is_create'=>$request['is_create']]);
         return redirect(route('users'));
     }
     public function Delete($id)

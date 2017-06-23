@@ -9,7 +9,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-hover">
                     <tr>
                         <th style="width: 10px">id</th>
                         <th>姓名</th>

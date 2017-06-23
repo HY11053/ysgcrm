@@ -73,7 +73,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">模板片段数据</h3>
+                    <h3 class="box-title">模板片段数据</h3><span style="margin-left: 5px; display: inline-block;"><i class="ion ion-bonfire text-red"></i>今日模板添加数：{{\App\Admin\Article::where('created_at','>',\Carbon\Carbon::today())->count()}}</span><span style=" margin-left: 5px;isplay: inline-block;"><i class="ion ion-ios-pulse text-red"></i>今日品牌添加数：{{\App\Model\Branddata::where('status',1)->where('updated_at','>',\Carbon\Carbon::today())->count()}}</span>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>

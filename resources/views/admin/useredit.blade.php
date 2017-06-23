@@ -39,6 +39,14 @@
                     <input type="password" class="form-control" name="password" placeholder="密码">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
+                <div class="form-group has-feedback" style="margin-top: 10px; padding-left: 10px;">
+                    <label style="display: inline-block; margin-right: 10px;">
+                        <input type="radio" name="is_create" value="1" class="flat-red" @if($user->is_create) checked @endif>允许生成文章
+                    </label>
+                    <label>
+                        <input type="radio" name="is_create" value="0" class="flat-red" @if(!$user->is_create) checked @endif>不允许
+                    </label>
+                </div>
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-xs-12">

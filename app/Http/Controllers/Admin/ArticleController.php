@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin\Article;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +36,7 @@ class ArticleController extends Controller
                 Article::create(['content'=>$content,'user_id'=>$request['user_id'],'type'=>$request['type']]);
             }
         }
-            return '导入成功';
+            return  redirect(route('home'));
         }
 
     }
@@ -46,9 +47,9 @@ class ArticleController extends Controller
     {
         if(empty($option))
         {
-            $articledatas=Article::where('id','<>',0)->paginate(50);
+            $articledatas=Article::where('id','<>',0)->orderBy('id','desc')->paginate(50);
         }else{
-            $articledatas=Article::where('type',$option)->paginate(50);
+            $articledatas=Article::where('type',$option)->orderBy('id','desc')->paginate(50);
         }
 
         return view('admin.articledata',compact('articledatas'));
@@ -59,6 +60,10 @@ class ArticleController extends Controller
      */
     public function ArticleCreate()
     {
+        if(!User::where('id',Auth::id())->value('is_create'))
+        {
+            return '无权限操作！';
+        }
         return view('admin.articlecreate');
     }
     /*

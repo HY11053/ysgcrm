@@ -16,13 +16,13 @@ class WorkController extends Controller
     {
         if(Auth::id()==1)
         {
-            $works=Work::where('id','<>',0)->paginate(50);
+            $works=Work::where('id','<>',0)->orderBy('id','desc')->paginate(50);
         }else{
             if(User::where('id',Auth::id())->value('type'))
             {
-                $works=Work::where('id','<>',0)->whereIn('user_id',User::where('gid',User::where('id',Auth::id())->value('gid'))->pluck('id'))->paginate(50);
+                $works=Work::where('id','<>',0)->whereIn('user_id',User::where('gid',User::where('id',Auth::id())->value('gid'))->pluck('id'))->orderBy('id','desc')->paginate(50);
             }else{
-                $works=Work::where('id','<>',0)->where('user_id',Auth::id())->paginate(50);
+                $works=Work::where('id','<>',0)->where('user_id',Auth::id())->orderBy('id','desc')->paginate(50);
             }
         }
 
@@ -34,13 +34,13 @@ class WorkController extends Controller
     {
         if(Auth::id()==1)
         {
-            $works=Worktui::where('id','<>',0)->paginate(50);
+            $works=Worktui::where('id','<>',0)->orderBy('id','desc')->paginate(50);
         }else{
             if(User::where('id',Auth::id())->value('type'))
             {
-                $works=Worktui::where('id','<>',0)->whereIn('user_id',User::where('gid',User::where('id',Auth::id())->value('gid'))->pluck('id'))->paginate(50);
+                $works=Worktui::where('id','<>',0)->whereIn('user_id',User::where('gid',User::where('id',Auth::id())->value('gid'))->pluck('id'))->orderBy('id','desc')->paginate(50);
             }else{
-                $works=Worktui::where('id','<>',0)->where('user_id',Auth::id())->paginate(50);
+                $works=Worktui::where('id','<>',0)->where('user_id',Auth::id())->orderBy('id','desc')->paginate(50);
             }
         }
 
