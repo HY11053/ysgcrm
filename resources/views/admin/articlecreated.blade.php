@@ -117,18 +117,16 @@
         </div>
         <div class="article">
             @if(isset($options['brandname']) && !empty($options['brandname']) && isset($options['jmzc']))<h2>{{$options['brandname']}}加盟支持</h2> @endif
-            @if( isset($options['jmzc']) && $articledatas['jmzc']->count())
-
-                @foreach($articledatas['jmzc'] as $index=>$jmzcdata)
-                    @if(strpos($jmzcdata->content,'@'))
-                        @foreach(explode('@',$jmzcdata->content) as $jmzcdatason)
+                @if(isset($jmzcdatas) && !empty($jmzcdatas))
+                    @if(strpos($jmzcdatas->content,'@'))
+                        @foreach(explode('@',$jmzcdatas->content) as $jmzcdatason)
                             <p>{{str_replace('{}',$options['brandname'],$jmzcdatason)}}</p>
                         @endforeach
                     @else
-                        <p>{{$index+1}}、{{str_replace('{}',$options['brandname'],$jmzcdata->content)}}</p>
+                        <p>{{str_replace('{}',$options['brandname'],$jmzcdatas->content)}}</p>
                     @endif
-                @endforeach
-            @endif
+
+                @endif
         </div>
         <div class="article">
             @if(isset($options['brandname']) && !empty($options['brandname']) && isset($options['xzjq']))<h2>{{$options['brandname']}}选址技巧</h2> @endif

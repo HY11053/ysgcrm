@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin'], function () {
     Route::get('/works/tuimport', 'WorkController@WaituiInport');
     Route::post('/works/tuimport', 'WorkController@PostWaituiInport');
     Route::get('/workstui', 'WorkController@IndexTui')->name('workstui');
+    Route::get('/export/article', 'ImporArticleController@impotrArticleSource');
 
 
 

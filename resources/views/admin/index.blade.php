@@ -108,8 +108,8 @@
                             </p>
 
                             <div class="progress-group">
-                                <span class="progress-text">零食店品牌</span>
-                                <span class="progress-number"><b>{{\App\Model\Branddata::where('type','零食店品牌')->where('status','<>',0)->count()}}</b>/{{\App\Model\Branddata::where('type','零食店品牌')->count()}}</span>
+                                <span class="progress-text">奶茶店品牌</span>
+                                <span class="progress-number"><b>{{\App\Model\Branddata::where('type','奶茶店')->where('status','<>',0)->count()}}</b>/{{\App\Model\Branddata::where('type','奶茶店')->count()}}</span>
 
                                 <div class="progress sm">
                                     <div class="progress-bar progress-bar-aqua" style="width: @if(\App\Model\Branddata::where('status',1)->where('type','零食店品牌')->count()>0){{sprintf("%.4f", \App\Model\Branddata::where('status',1)->where('type','零食店品牌')->count()/(\App\Model\Branddata::where('type','零食店品牌')->count()),0,-1)*100}}% @else 0% @endif"></div>
@@ -117,7 +117,7 @@
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">炒货店品牌</span>
+                                <span class="progress-text">台湾奶茶品牌</span>
                                 <span class="progress-number">{{\App\Model\Branddata::where('type','炒货品牌')->where('status','<>',0)->count()}}</b>/{{\App\Model\Branddata::where('type','炒货品牌')->count()}}</span>
 
                                 <div class="progress sm">
@@ -126,7 +126,7 @@
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">干果店品牌</span>
+                                <span class="progress-text">港式奶茶品牌</span>
                                 <span class="progress-number"><b>{{\App\Model\Branddata::where('type','干果品牌')->where('status','<>',0)->count()}}</b>/{{\App\Model\Branddata::where('type','干果品牌')->count()}}</span>
 
                                 <div class="progress sm">
@@ -135,7 +135,7 @@
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">进口零食品牌</span>
+                                <span class="progress-text">网红奶茶品牌</span>
                                 <span class="progress-number"><b>{{\App\Model\Branddata::where('type','进口零食品牌')->where('status','<>',0)->count()}}</b>/{{\App\Model\Branddata::where('type','进口零食品牌')->count()}} </span>
 
                                 <div class="progress sm">
@@ -153,9 +153,9 @@
                     <div class="row">
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> @if(\App\Model\Branddata::where('status',1)->where('type','零食店品牌')->count()) {{sprintf("%.4f", \App\Model\Branddata::where('status',1)->where('type','零食店品牌')->count()/(\App\Model\Branddata::where('type','零食店品牌')->count()),0,-1)*100}}% @else 0% @endif </span>
-                                <h5 class="description-header">{{\App\Model\Branddata::where('type','零食店品牌')->count()}}</h5>
-                                <span class="description-text">零食品牌</span>
+                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> @if(\App\Model\Branddata::where('status',1)->where('type','奶茶店')->count()) {{sprintf("%.4f", \App\Model\Branddata::where('status',1)->where('type','奶茶店')->count()/(\App\Model\Branddata::where('type','奶茶店')->count()),0,-1)*100}}% @else 0% @endif </span>
+                                <h5 class="description-header">{{\App\Model\Branddata::where('type','奶茶店')->count()}}</h5>
+                                <span class="description-text">奶茶品牌</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -164,7 +164,7 @@
                             <div class="description-block border-right">
                                 <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> @if(\App\Model\Branddata::where('status',1)->where('type','干果品牌')->count()) {{sprintf("%.4f", \App\Model\Branddata::where('status',1)->where('type','干果品牌')->count()/(\App\Model\Branddata::where('type','干果品牌')->count()),0,-1)*100}}% @else 0% @endif</span>
                                 <h5 class="description-header">{{\App\Model\Branddata::where('type','干果品牌')->count()}}</h5>
-                                <span class="description-text">干果品牌</span>
+                                <span class="description-text">台湾奶茶</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -173,7 +173,7 @@
                             <div class="description-block border-right">
                                 <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> @if(\App\Model\Branddata::where('status',1)->where('type','炒货品牌')->count()) {{sprintf("%.4f", \App\Model\Branddata::where('status',1)->where('type','炒货品牌')->count()/(\App\Model\Branddata::where('type','炒货品牌')->count()),0,-1)*100}}% @else 0% @endif</span>
                                 <h5 class="description-header">{{\App\Model\Branddata::where('type','炒货品牌')->count()}}</h5>
-                                <span class="description-text">炒货品牌</span>
+                                <span class="description-text">港式奶茶</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -182,7 +182,7 @@
                             <div class="description-block">
                                 <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> @if(\App\Model\Branddata::where('status',1)->where('type','进口零食品牌')->count())  {{sprintf("%.4f", \App\Model\Branddata::where('status',1)->where('type','进口零食品牌')->count()/(\App\Model\Branddata::where('type','进口零食品牌')->count()),0,-1)*100}}% @else 0% @endif</span>
                                 <h5 class="description-header">{{\App\Model\Branddata::where('type','进口零食品牌')->count()}}</h5>
-                                <span class="description-text">进口零食品牌</span>
+                                <span class="description-text">网红奶茶品牌</span>
                             </div>
                             <!-- /.description-block -->
                         </div>

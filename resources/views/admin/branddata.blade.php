@@ -23,7 +23,7 @@
             <tr>
                 @foreach($branddatas as $branddata)
                 <td>{{$loop->iteration}}</td>
-                <td>{{$branddata->brands}}</td>
+                <td>{{$branddata->brand}}</td>
                 <td>{{$branddata->type}}</td>
                 <td>{{$branddata->nums}}</td>
                 <td style="text-align: center">

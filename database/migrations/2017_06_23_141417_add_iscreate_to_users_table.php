@@ -14,7 +14,7 @@ class AddIscreateToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('iscreate')->default(0);
+            $table->integer('is_create')->default(0);
 
         });
     }

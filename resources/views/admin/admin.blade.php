@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
-    <title>@yield('title') _一扫光一部CRM</title>
+    <title>@yield('title') _奶茶项目CRM</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="/adminlte/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/adminlte//ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -138,7 +138,7 @@
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
-                <li class="header">零食品牌数据</li>
+                <li class="header">奶茶品牌数据</li>
                 <li class=" treeview">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>模板片段</span>
@@ -161,18 +161,13 @@
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-files-o"></i>
-                        <span>零食品牌数据</span>
+                        <span>奶茶品牌数据</span>
                         <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>
                     </a>
                     <ul class="treeview-menu">
                         <li @if(Request::getRequestUri()=='/branddatas') class="active" @endif><a href="/branddatas"><i class="fa fa-circle-o"></i> 所有品牌</a></li>
-                        <li @if(Request::getRequestUri()=='/branddatas/lsd') class="active" @endif><a href="/branddatas/lsd"><i class="fa fa-circle-o"></i> 零食店品牌</a></li>
-                        <li @if(Request::getRequestUri()=='/branddatas/chd') class="active" @endif><a href="/branddatas/chd"><i class="fa fa-circle-o"></i>  炒货店品牌</a></li>
-                        <li @if(Request::getRequestUri()=='/branddatas/ggd') class="active" @endif><a href="/branddatas/ggd"><i class="fa fa-circle-o"></i> 干果店品牌</a></li>
-                        <li @if(Request::getRequestUri()=='/branddatas/jklsd') class="active" @endif><a href="/branddatas/jklsd"><i class="fa fa-circle-o"></i> 进口零食品牌</a></li>
-                        <li @if(Request::getRequestUri()=='/branddatas/ssd') class="active" @endif><a href="/branddatas/ssd"><i class="fa fa-circle-o"></i> 熟食品牌</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

@@ -80,8 +80,9 @@ class ArticleController extends Controller
             }
         }
         $jmlcdatas=Article::where('type','jmlc')->inRandomOrder()->first();
+        $jmzcdatas=Article::where('type','jmzc')->inRandomOrder()->first();
         //dd($jmlcdatas->content);
-        return view('admin.articlecreated',compact('jmlcdatas','options','articledatas'));
+        return view('admin.articlecreated',compact('jmlcdatas','options','articledatas','jmzcdatas'));
     }
     /*
      * 语句查看
